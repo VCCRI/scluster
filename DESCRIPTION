@@ -1,0 +1,26 @@
+Package: scluster
+Type: Package
+Title: Supervised sparse k-means clustering
+Version: 1.0
+Date: 2017-09-10
+Author: Tingting Gong, Michael Troup
+Maintainer: Michael Troup <m.troup@victorchang.edu.au> 
+Description: Supervised (and unsupervised) sparse k-means clustering, with 
+    single-cell RNA-seq data in mind.  The clustering can be performed using 
+    either a traditional (squared) euclidean distance, or via a dissimilarity 
+    matrix that takes into account the drop-out phenomenom in single-cell  
+    RNA-seq data. The dissimilarity measure is obtained through the 
+    single-cell analysis package CIDR. 
+License: GPL (>=3)
+LazyData: TRUE
+Depends:
+    R (>= 3.1.0)
+Imports:
+    cidr,
+    cluster,
+    mclust,
+    Rcpp (>= 0.12.12),
+    RcppEigen (>= 0.3.3.3.0),
+    RcppParallel (>= 4.3.20)
+LinkingTo: Rcpp, RcppEigen, RcppParallel
+RoxygenNote: 5.0.1
