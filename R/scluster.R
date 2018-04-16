@@ -226,6 +226,8 @@ setMethod("sclust", "sclData", function(object, nCluster, s, nf, max.nIter,
     if(supervise==TRUE){
         index_markers <- match(markers, rownames(object@tags.lcpm))
         index_markers <- index_markers[!is.na(index_markers)]
+        if (length(index_markers)==0)
+            stop("TERMINATING: no matching markers - check input")
         w.initial <- rep(0,nrow(object@tags.lcpm))
         w.initial[index_markers] <- 1/sqrt(length(index_markers))
     }else{
